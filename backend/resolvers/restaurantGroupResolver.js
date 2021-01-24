@@ -1,5 +1,5 @@
 import { GraphQLError } from "graphql";
-import restaurantGroupService from "../services/restaurantService";
+import restaurantGroupService from "../services/restaurantGroupService";
 
 /**
  * from the Apollo docs: a resolver is a function that's responsible for populating the data for a single field in your schema
@@ -48,13 +48,9 @@ const restaurantGroupResolvers = {
     },
     Mutation: {
         createRestaurantGroup: async (_parent, { name, description, restaurantIds }) => {
-            validateRating(rating);
-
             return await restaurantGroupService.createRestaurantGroup(name, description, restaurantIds);
         },
         updateRestaurantGroup: async (_parent, { id, name, description, restaurantIds }) => {
-            validateRating(rating);
-
             return await restaurantGroupService.updateRestaurantGroup(id, name, description, restaurantIds);
         },
         deleteRestaurantGroup: async (_parent, { id }) => {
@@ -62,11 +58,5 @@ const restaurantGroupResolvers = {
         }
     }
 };
-
-function validateRating(rating) {
-    if (rating !== null && (rating < 1 || rating > 5)) {
-        throw new GraphQLError("Rating must be an integer between 1-5");
-    }
-}
 
 export default restaurantGroupResolvers;

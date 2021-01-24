@@ -1,7 +1,7 @@
 import { gql } from "apollo-server-express";
 
 /**
- * type definitions for a restaurant entity
+ * type definitions for a restaurantGroup entity
  * this should look pretty familiar if you've worked with statically typed object-oriented languages before
  * 
  * some things to note:
