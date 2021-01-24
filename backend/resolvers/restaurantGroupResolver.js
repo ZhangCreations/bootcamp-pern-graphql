@@ -1,5 +1,5 @@
 import { GraphQLError } from "graphql";
-import restaurantService from "../services/restaurantService";
+import restaurantGroupService from "../services/restaurantService";
 
 /**
  * from the Apollo docs: a resolver is a function that's responsible for populating the data for a single field in your schema
