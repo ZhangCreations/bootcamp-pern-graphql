@@ -40,14 +40,15 @@ const mutation = gql`
  * click into restaurantType and restaurantResolvers to learn more about typeDefs and resolvers
  */
 const executableSchema = makeExecutableSchema({
-    typeDefs: [
-      query,
-      mutation,
-      restaurantType
-    ],
-    resolvers: merge(
-        restaurantResolvers
-    )
+  typeDefs: [
+    query,
+    mutation,
+    restaurantType
+  ],
+  resolvers: merge(
+    restaurantResolvers,
+    restaurantGroupResolvers,
+  )
 });
 
 export default executableSchema;
