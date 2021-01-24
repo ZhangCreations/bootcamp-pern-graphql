@@ -17,7 +17,7 @@ const restaurantGroupType = gql`
         id: ID!
         name: String!
         description: String
-        restaurants: [Int]
+        restaurantIds: [Int]
     }
 
     extend type Query {
@@ -26,8 +26,8 @@ const restaurantGroupType = gql`
     }
 
     extend type Mutation {
-        createRestaurantGroup(name: String!, name: String!, description: String, restaurants: [Int]) : Restaurant
-        updateRestaurantGroup(id: ID!, name: String!, description: String, restaurants: [Int]) : Restaurant
+        createRestaurantGroup(name: String!, name: String!, description: String, restaurantIds: [Int]) : Restaurant
+        updateRestaurantGroup(id: ID!, name: String!, description: String, restaurantIds: [Int]) : Restaurant
         deleteRestaurantGroup(id: ID!) : ID
     }
 `;
