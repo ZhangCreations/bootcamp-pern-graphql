@@ -50,6 +50,18 @@ const Display = (props) => {
   if (error) return <p>Error loading restaurants!</p>;
   if (errorGroups) return <p>Error loading restaurant groups!</p>;
 
+  console.log("1",dataGroups);
+  console.log("2",dataGroups.restaurantGroups[0]);
+  console.log("3",dataGroups.restaurantGroups[0].restaurantIds);
+
+  console.log("DATA", data);
+  const foo = dataGroups.restaurantGroups.map( x => {
+    data.restaurants.filter(y => {
+      x.restaurantIds.includes(parseInt(y.id));
+    })
+  }) 
+
+  console.log(foo);
 
   return (
     <div className="display-container">
@@ -58,8 +70,8 @@ const Display = (props) => {
       <BasicTable data={removeTypeName(data.restaurants)} />
       <h3>Restaurant Groups</h3>
       <BasicTable  data={removeTypeName(dataGroups.restaurantGroups)} />
-      <h2>Global Data Handling</h2>
-      <BasicTable  data={props.storeData} />
+      {/* <h2>Global Data Handling</h2> */}
+      {/* <BasicTable  data={props.storeData} /> */}
     </div>
   );
 }
