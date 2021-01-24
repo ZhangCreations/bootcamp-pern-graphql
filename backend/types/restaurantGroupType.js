@@ -17,7 +17,7 @@ const restaurantGroupType = gql`
         id: ID!
         name: String!
         description: String
-        restaurants: [Int]]
+        restaurants: [Int]
     }
 
     extend type Query {
