@@ -11,6 +11,7 @@ import { merge } from "lodash";
 
 import restaurantType from "./types/restaurantType";
 import restaurantResolvers from "./resolvers/restaurantResolvers";
+import restaurantGroupResolvers from "./resolvers/restaurantGroupResolver";
 
 /**
  * base Query type definition, other queries extend this
