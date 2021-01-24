@@ -7,10 +7,6 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.STRING,
             allowNull: false
         },
-        budget: {
-            type: DataTypes.ENUM,
-            values: ["LOW", "MEDIUM", "HIGH"]
-        },
         description: {
             type: DataTypes.STRING,
         },
